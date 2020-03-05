@@ -1,6 +1,5 @@
 package AlgorithmAnalysis;
 
-import AlgorithmAnalysis_Big_O.*;
 import java.util.Scanner;
 
 public class TimeComplexity {
@@ -59,10 +58,10 @@ public class TimeComplexity {
         if (n == 0) {
             return;
         }
-        for (int k = 1; k < n; k++) {
-            System.out.println(n);
-            timeOfFactorial(k);
+        for (int k = 1; k <= n; k++) {
+            System.out.println(k);
         }
+        timeOfFactorial(n-1);
     }
 
 }
