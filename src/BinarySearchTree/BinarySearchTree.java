@@ -45,20 +45,22 @@ public class BinarySearchTree {
             } else if (root.left == null) {
                 root = root.right;
             } else {
-                int mini = searchMini(root.right, root.value);
-                root.value = mini;
-                deleteNode(root.right, mini);
+                root.value = searchMini(root.right, root.right.value);
+                deleteNode(root.right, root.value);
             }
         }
         return root;
     }
 
     private int searchMini(Node root, int mini) {
+
         if (root == null) {
             return mini;
         }
-        mini = searchMini(root.right, root.value <= mini ? root.value : mini);
-        mini = searchMini(root.left, root.value <= mini ? root.value : mini);
+        mini = Integer.min(mini, root.value);
+        
+        mini = Integer.min(searchMini(root.left, mini), searchMini(root.right, mini));
+        
         return mini;
     }
 
