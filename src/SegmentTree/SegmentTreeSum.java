@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class SegmentTreeSum{
+public class SegmentTreeSum {
 
     static Node[] arr;
     static Node[] segs;
