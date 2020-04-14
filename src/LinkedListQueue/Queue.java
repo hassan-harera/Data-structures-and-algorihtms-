@@ -1,25 +1,25 @@
-package LinkeListStack;
+package LinkedListQueue;
 
-public class Stack {
+public class Queue {
 
     private LinkedList l;
 
-    public Stack() {
+    public Queue() {
         l = new LinkedList();
     }
 
-    public int pop() {
+    public int poll() {
         int returnValue = l.getHead();
         l.delete(0);
         return returnValue;
     }
 
-    public Boolean add(int a) {
-        return l.insertAtFirst(a);
+    public Boolean remove() {
+        return l.delete(0);
     }
 
-    public Boolean push(int a) {
-        return l.insertAtFirst(a);
+    public void add(int a) {
+        l.add(a);
     }
 
     public int peek() {
