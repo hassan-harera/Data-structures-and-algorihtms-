@@ -78,6 +78,24 @@ public class LinkedList {
         return head;
     }
 
+    public static LinkedList concat(LinkedList l, LinkedList r) {
+
+        /*
+        Give a fast algorithm for concatenating two doubly linked lists L and M, with
+        header and trailer sentinel nodes, into a single list L ′   O(1).
+         */
+        
+        Node head = l.head;
+        Node tail = r.head;
+
+        l.tail.next = r.head;
+
+        l.head = head;
+        l.tail = tail;
+
+        return l;
+    }
+
     public Boolean delete(int index) {
         if (index < 0 || index >= size) {
             return false;
@@ -87,6 +105,12 @@ public class LinkedList {
         return true;
     }
 
+    /*
+    Describe in detail how to swap two nodes x and y in a singly linked list L given
+references only to x and y. Repeat this exercise for the case when L is a doubly
+linked list. Which algorithm takes more time? 
+    this method can give a solution  O(n)
+     */
     private Node delete(int index, Node left, Node next, int c) {
 
         if (index == 0) {
@@ -100,6 +124,7 @@ public class LinkedList {
 
         delete(index, left.next, next.next, c + 1);
         return left;
+
     }
 }
 

@@ -9,7 +9,7 @@ public class LinkedListDemo {
         for (int i = 1; i < 10; i++) {
             l.add(i);
         }
-        
+        l.revers();
         l.printLinkedList();
 
     }

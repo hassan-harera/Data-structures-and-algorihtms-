@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SingleLinkedList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LinkedList {
 
@@ -35,8 +33,28 @@ public class LinkedList {
         if (head == null) {
             return;
         }
-        System.out.println(head.next);
+        System.out.println(head.val);
         printLinkedList(head.next);
+    }
+
+    public void revers() {
+        head = revers(head, new ArrayList());
+    }
+
+    /*
+    Describe in detail an algorithm for reversing a singly linked list L using only a
+    constant amount of additional space and not using any recursion.  O(2n) = O(n)
+     */
+    private Node revers(Node head, List<Node> l) {
+        while (head != null) {
+            l.add((head));
+            head = head.next;
+        }
+        for (int i = l.size() - 1; i > 0; i--) {
+            l.get(i - 1).next = null;
+            l.get(i).next = l.get(i - 1);
+        }
+        return l.get(l.size() - 1);
     }
 
 }
