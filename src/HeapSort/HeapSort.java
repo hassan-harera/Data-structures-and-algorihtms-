@@ -1,19 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package HeapSort;
 
+import static HeapSort.HeapSort.printSortedArray;
 import java.util.Random;
 
-/**
- *
- * @author harera
- */
 public class HeapSort {
 
-    public static void sort(int[] arr) {
+    private int[] arr;
+
+    public void setArr(int[] arr) {
+        this.arr = arr;
+    }
+
+    public void sort() {
         int n = arr.length;
         for (int i = (n / 2) - 1; i >= 0; i--) {
             heapSort(arr, n, i);
@@ -52,6 +50,9 @@ public class HeapSort {
             System.out.print(arr[i] + " ");
         }
     }
+}
+
+class Main {
 
     public static void main(String[] args) {
 
@@ -65,7 +66,11 @@ public class HeapSort {
             System.out.print(arr[i] + "  ");
         }
         System.out.println("");
-        sort(arr);
+
+        HeapSort hs = new HeapSort();
+        hs.setArr(arr);
+        hs.sort();
+
         System.out.println("after sorting");
         printSortedArray(arr);
 
