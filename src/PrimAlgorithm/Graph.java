@@ -42,11 +42,11 @@ public class Graph {
             Edge x = q.poll();
             if (!visit[x.dest]) {
                 totalCost += x.cost;
-            }
-            visit[x.dest] = true;
-            for (Edge e : graph[x.dest]) {
-                if (!visit[e.dest]) {
-                    q.add(e);
+                visit[x.dest] = true;
+                for (Edge e : graph[x.dest]) {
+                    if (!visit[e.dest]) {
+                        q.add(e);
+                    }
                 }
             }
         }
