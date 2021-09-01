@@ -46,7 +46,7 @@ public class Sort {
                 j--;
             }
         }
-        sort(l, j);
-        sort(j + 1, h);
+        sort(l, i);
+        sort(i + 1, h);
     }
 }
